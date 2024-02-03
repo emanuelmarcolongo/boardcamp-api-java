@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class CustomerExceptionHandler {
     @ExceptionHandler
-    public ResponseEntity<Object> handleCustomerCpfConflictException(CustomerCpfConflictException exception) {
+    public ResponseEntity<String> handleCustomerCpfConflictException(CustomerCpfConflictException exception) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
     }
 
     @ExceptionHandler
-    public ResponseEntity<Object> handleCustomerNotFoundException(CustomerNotFoundException exception) {
+    public ResponseEntity<String> handleCustomerNotFoundException(CustomerNotFoundException exception) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 }

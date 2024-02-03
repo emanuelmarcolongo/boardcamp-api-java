@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @ControllerAdvice
 public class GameExceptionHandler {
     @ExceptionHandler({ GameTitleConflictException.class })
-    public ResponseEntity<Object> handleGameTitleConflictException(GameTitleConflictException exception) {
+    public ResponseEntity<String> handleGameTitleConflictException(GameTitleConflictException exception) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
     }
 }
