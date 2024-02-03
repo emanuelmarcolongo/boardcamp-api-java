@@ -12,4 +12,9 @@ public class GameExceptionHandler {
     public ResponseEntity<String> handleGameTitleConflictException(GameTitleConflictException exception) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
     }
+
+    @ExceptionHandler({ GameNotFoundException.class })
+    public ResponseEntity<String> handleGameNotFoundException(GameNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+    }
 }
