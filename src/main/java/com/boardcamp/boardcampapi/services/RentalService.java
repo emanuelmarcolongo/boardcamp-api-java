@@ -34,7 +34,7 @@ public class RentalService {
         GameModel game = gameRepository.findById(rentalDTO.getGameId())
                 .orElseThrow(() -> new GameNotFoundException("No game with given Id"));
 
-        int gameRentals = rentalRepository.countByGameId(rentalDTO.getGameId());
+        int gameRentals = rentalRepository.countGameRentalsAmount(rentalDTO.getGameId());
 
         if (gameRentals >= game.getStockTotal()) {
             throw new GameOutOfStockException("All copies of this game are already rented");
