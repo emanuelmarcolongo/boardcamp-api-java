@@ -1,4 +1,4 @@
-package com.boardcamp.boardcampapi;
+package com.boardcamp.boardcampapi.UnitTests;
 
 import static org.mockito.Mockito.doReturn;
 
