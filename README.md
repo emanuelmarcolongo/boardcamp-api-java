@@ -48,11 +48,11 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 
 ```JSON
 {
-  id: 1,
-  name: 'Banco Imobiliário',
-  image: 'http://',
-  stockTotal: 3,
-  pricePerDay: 1500
+  "id": 1,
+  "name": "Banco Imobiliário",
+  "image": "http://",
+  "stockTotal": 3,
+  "pricePerDay": 1500
 }
 ```
 
@@ -62,18 +62,18 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 ```JSON
 [
   {
-    id: 1,
-    name: 'Banco Imobiliário',
-    image: 'http://',
-    stockTotal: 3,
-    pricePerDay: 1500
+    "id": 1,
+    "name": "Banco Imobiliário",
+    "image": "http://",
+    "stockTotal": 3,
+    "pricePerDay": 1500
   },
   {
-    id: 2,
-    name: 'Detetive',
-    image: 'http://',
-    stockTotal: 1,
-    pricePerDay: 2500
+    "id": 2,
+    "name": "Detetive",
+    "image": "http://",
+    "stockTotal": 1,
+    "pricePerDay": 2500
   },
 ]
 ```
@@ -83,8 +83,8 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 
 ```JSON
 {
-  "name": 'Banco Imobiliário',
-  "image": 'http://www.imagem.com.br/banco_imobiliario.jpg',
+  "name": "Banco Imobiliário",
+  "image": "http://www.imagem.com.br/banco_imobiliario.jpg",
   "stockTotal": 3,
   "pricePerDay": 1500
 }
@@ -95,7 +95,7 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 ```JSON
 {
   "id": 1,
-  "name": 'Banco Imobiliário',
+  "name": "Banco Imobiliário",
   "image": "http://www.imagem.com.br/banco_imobiliario.jpg",
   "stockTotal": 3,
   "pricePerDay": 1500
@@ -138,8 +138,8 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 ```JSON
 {
   "id": 1,
-  "name": 'João Alfredo',
-  "cpf": '01234567890'
+  "name": "João Alfredo",
+  "cpf": "01234567890"
 }
 ```
 
@@ -152,8 +152,8 @@ Resposta:
 ```JSON
 {
   "id": 1,
-  "name": 'João Alfredo',
-  "cpf": '01234567890'
+  "name": "João Alfredo",
+  "cpf": "01234567890"
 }
 ```
 
@@ -172,8 +172,8 @@ Corpo da Resposta:
 
 ```JSON
 {
-  "name": 'João Alfredo',
-  "cpf": '01234567890'
+  "name": "João Alfredo",
+  "cpf": "01234567890"
 }
 ```
 
@@ -182,8 +182,8 @@ Corpo da Resposta:
 ```JSON
 {
   "id": 1,
-  "name": 'João Alfredo',
-  "cpf": '01234567890'
+  "name": "João Alfredo",
+  "cpf": "01234567890"
 }
 ```
 
@@ -228,7 +228,7 @@ Resposta - status 400 (BAD REQUEST)
   "id": 1,
   "customerId": 1,
   "gameId": 1,
-  "rentDate": '2021-06-20',    // data em que o aluguel foi feito, formato LocalDate
+  "rentDate": "2021-06-20",    // data em que o aluguel foi feito, formato LocalDate
   "daysRented": 3,             // por quantos dias o cliente agendou o aluguel
   "returnDate": null,          // data que o cliente devolveu o jogo (null enquanto não devolvido)
   "originalPrice": 4500,       // preço total do aluguel em centavos (dias alugados vezes o preço por dia do jogo)
@@ -245,23 +245,23 @@ Corpo da Resposta:
 ```JSON
 [
   {
-    id: 1,
-    rentDate: '2021-06-20',
-    daysRented: 3,
-    returnDate: null, // troca pra uma data quando já devolvido
-    originalPrice: 4500,
-    delayFee: 0, // troca por outro valor caso tenha devolvido com atraso
-    customer: {
-      id: 1,
-      name: 'João Alfredo',
-		  cpf: '01234567890'
+    "id": 1,
+    "rentDate": "2021-06-20",
+    "daysRented": 3,
+    "returnDate": null, // troca pra uma data quando já devolvido
+    "originalPrice": 4500,
+    "delayFee": 0, // troca por outro valor caso tenha devolvido com atraso
+    "customer": {
+      "id": 1,
+      "name": "João Alfredo",
+		  "cpf": "01234567890"
     },
-    game: {
-      id: 1,
-		  name: 'Banco Imobiliário',
-		  image: 'http://www.imagem.com.br/banco.jpg',
-		  stockTotal: 3,
-		  pricePerDay: 1500
+    "game": {
+      "id": 1,
+		 "name": "Banco Imobiliário",
+		  "image": "http://www.imagem.com.br/banco.jpg",
+		  "stockTotal": 3,
+		  "pricePerDay": 1500
     }
   }
 ]
@@ -284,20 +284,20 @@ Corpo da Resposta:
 ```JSON
 {
     "id": 1,
-    "rentDate": '2021-06-20',
+    "rentDate": "2021-06-20",
     "daysRented": 3,
     "returnDate": null,
     "originalPrice": 4500,
     "delayFee": 0,
     "customer": {
       "id": 1,
-      "name": 'João Alfredo',
-		  "cpf": '01234567890'
+      "name": "João Alfredo",
+		  "cpf": "01234567890"
     },
     "game": {
       "id": 1,
-		  "name": 'Banco Imobiliário',
-		  "image": 'http://www.imagem.com.br/banco.jpg',
+		  "name": "Banco Imobiliário",
+		  "image": "http://www.imagem.com.br/banco.jpg",
 		  "stockTotal": 3,
 		  "pricePerDay": 1500
     }
