@@ -57,7 +57,9 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 ```
 
 - ### GET /games
-  status: 200 (OK) -> Recebe uma lista dos jogos cadastrados
+
+  - Status da Resposta: 200 (OK) -> Recebe uma lista dos jogos cadastrados
+  - Corpo da Resposta:
 
 ```JSON
 [
@@ -90,7 +92,8 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 }
 ```
 
-- Resposta - status 201 (CREATED)
+- Status da Resposta - 201 (CREATED)
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -106,7 +109,8 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 
 - name => Deve estar presente, não nulo e não deve ser uma string vazia ""; <br>
 - stockTotal e pricePerDay => devem ser numeros maiores que 0, não podem ser nulos. <br>
-- Resposta - status 400 (BAD REQUEST)
+- Status da Resposta - 400 (BAD REQUEST)
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -120,7 +124,8 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 <br>
 
 - name => Não pode ser um nome de um jogo já existente.
-- Resposta - status 409 (CONFLICT);
+- Status da Resposta - 409 (CONFLICT);
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -145,9 +150,12 @@ Para rodar a aplicação, basta ir no arquivo src/java/com/boardcamp/boardcampap
 
 - ### GET /customers/:id
 
-GET /customers/1 <br>
-status: 200 (OK) -> Recebe o cliente com determinado ID. <br>
-Resposta:
+```http
+GET /customers/1
+```
+
+- Status da Resposta: 200 (OK) -> Recebe o cliente com determinado ID. <br>
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -157,15 +165,19 @@ Resposta:
 }
 ```
 
-Caso não haja cliente com determinado ID: <br>
-Status da Resposta: 404 (NOT FOUND). <br>
-Corpo da Resposta:
+<br>
+
+- Caso não haja cliente com determinado ID: <br>
+- Status da Resposta: 404 (NOT FOUND). <br>
+- Corpo da Resposta:
 
 ```JSON
 {
   "Customer not found with given ID"
 }
 ```
+
+<hr>
 
 - ### POST /customers
 - Corpo da Requisição Esperado:
@@ -177,7 +189,8 @@ Corpo da Resposta:
 }
 ```
 
-- Resposta - status 201 (CREATED)
+- Status da Resposta - 201 (CREATED)
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -192,7 +205,8 @@ Corpo da Resposta:
 - name => Deve estar presente, não nulo e não deve ser uma string vazia ""; <br>
 - cpf => deve ser uma string com 11 caracteres, não pode ser nulo nem string vazia;
 
-Resposta - status 400 (BAD REQUEST)
+- Status da Resposta - 400 (BAD REQUEST)
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -206,7 +220,8 @@ Resposta - status 400 (BAD REQUEST)
 <br>
 
 - cpf => Não pode ser o cpf de um cleinte já existente.
-- Resposta - status 409 (CONFLICT);
+- Status da Resposta - 409 (CONFLICT);
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -238,7 +253,10 @@ Resposta - status 400 (BAD REQUEST)
 
 - ### GET /rentals
 
-GET /rentals <br>
+```http
+GET /rentals
+```
+
 Status da Resposta: 200 (OK) -> Recebe uma lista com os alugueis realizados. <br>
 Corpo da Resposta:
 
@@ -279,7 +297,10 @@ Corpo da Resposta:
 }
 ```
 
-- Resposta - status 201 (CREATED)
+#### Sendo uma requisição válida
+
+- Status da Resposta - 201 (CREATED)
+- Corpo da Resposta
 
 ```JSON
 {
@@ -308,8 +329,10 @@ Corpo da Resposta:
 
 - daysRented => Deve estar presente, não nulo e maior que 0; <br>
 - gameId e customerId não podem ser nulos.
+<hr>
 
-Resposta - status 400 (BAD REQUEST)
+- Status da Resposta - 400 (BAD REQUEST)
+- Corpo da Resposta
 
 ```JSON
 {
@@ -323,7 +346,10 @@ Resposta - status 400 (BAD REQUEST)
 <br>
 
 - gameId => Deve se referir a um jogo existente.
-- Resposta - status 404 (NOT FOUND);
+<hr>
+
+- Status da Resposta -404 (NOT FOUND);
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -332,7 +358,10 @@ Resposta - status 400 (BAD REQUEST)
 ```
 
 - customerId => Deve se referir a um cliente existente.
-- Resposta - status 404 (NOT FOUND);
+<hr>
+
+- Status da Resposta - 404 (NOT FOUND);
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -341,7 +370,10 @@ Resposta - status 400 (BAD REQUEST)
 ```
 
 - Caso o jogo já possua uma quantidade de alugueis presentes (que ainda não foi devolvido)
-- Resposta - status 422(UNPROCESSABLE ENTITY);
+<hr>
+
+- Status da Resposta - 422(UNPROCESSABLE ENTITY);
+- Corpo da Resposta:
 
 ```JSON
 {
@@ -354,7 +386,7 @@ Resposta - status 400 (BAD REQUEST)
 
 Caso o ID seja válido e o aluguel não tenha sido retornado.
 
-- Resposta - status 200 (OK);
+- Status da Resposta - 200 (OK);
 - Corpo da Resposta:
 
 ```json
@@ -383,7 +415,7 @@ Caso o ID seja válido e o aluguel não tenha sido retornado.
 - ## Regras de negócio:
 - O id do aluguel fornecido deve existir
 
-- Resposta - status 404 (NOT FOUND);
+- Status Resposta - 404 (NOT FOUND);
 - Corpo da Resposta:
 
 ```json
@@ -391,7 +423,7 @@ Caso o ID seja válido e o aluguel não tenha sido retornado.
 ```
 
 - O aluguel não deve estar finalizado
-- Resposta - status 422 (UNPROCESSABLE ENTITY)
+- Status da Resposta - 422 (UNPROCESSABLE ENTITY)
 - Corpo da Resposta
 
 ```json
